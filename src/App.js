@@ -4,6 +4,7 @@ import { AuthProvider, AuthRoute } from './auth';
 import { HomePage } from './HomePage';
 import { BlogPage } from './BlogPage';
 import { BlogPost } from './BlogPost';
+import { BlogPostEdit } from './BlogPostEdit';
 import { ProfilePage } from './ProfilePage';
 import { LoginPage } from './LoginPage';
 import { LogoutPage } from './LogoutPage';
@@ -22,6 +23,11 @@ function App() {
 
             <Route path='/blog' element={<BlogPage />}>
               <Route path=':slug' element={<BlogPost />} />
+              <Route path=':slug/edit' element={
+                <AuthRoute>
+                  <BlogPostEdit />
+                </AuthRoute>
+              } />
             </Route>
 
             <Route path='/login' element={<LoginPage />} />

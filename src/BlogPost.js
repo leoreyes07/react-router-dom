@@ -18,6 +18,7 @@ function BlogPost() {
         <>
             <h2>{blogpost.title}</h2>
             <button onClick={returnToBlocg}>Back</button>
+            <button onClick={() => navigate(`/blog/${slug}/edit`)}>Edit</button>
             <p>{blogpost.content}</p>
             <p>{blogpost.author}</p>
         </>

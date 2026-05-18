@@ -1,14 +1,16 @@
 import React from "react";
 import { useAuth } from "./auth";
-import { Navigate } from "react-router-dom";
+import { useLocation, Navigate } from "react-router-dom";
 
 function LoginPage() {
   const auth = useAuth();
   const [username, setUsername] = React.useState('');
+  const location = useLocation();
 
   const login = (e) =>{
     e.preventDefault();
-    auth.login({ username });
+    const from = location.state?.from?.pathname || '/profile';
+    auth.login({ username }, from);
   };
 
   if (auth.user) {

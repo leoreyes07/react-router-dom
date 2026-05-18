@@ -5,6 +5,7 @@ import { HomePage } from './HomePage';
 import { BlogPage } from './BlogPage';
 import { BlogPost } from './BlogPost';
 import { BlogPostEdit } from './BlogPostEdit';
+import { BlogEditRoute } from './BlogEditRoute';
 import { ProfilePage } from './ProfilePage';
 import { LoginPage } from './LoginPage';
 import { LogoutPage } from './LogoutPage';
@@ -25,7 +26,9 @@ function App() {
               <Route path=':slug' element={<BlogPost />} />
               <Route path=':slug/edit' element={
                 <AuthRoute>
-                  <BlogPostEdit />
+                  <BlogEditRoute>
+                    <BlogPostEdit />
+                  </BlogEditRoute>
                 </AuthRoute>
               } />
             </Route>

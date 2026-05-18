@@ -9,7 +9,8 @@ function AuthProvider({ children }) {
     const [user, setUser] = React.useState(null);
 
     const login = ({ username }, from) => {
-        setUser({ username });
+        const isAdmin = ['leo', 'admin'].includes(username.toLowerCase());
+        setUser({ username, isAdmin });
         navigate(from || '/profile');
     };
 
@@ -43,8 +44,13 @@ function AuthRoute(props) {
     return props.children;
 }
 
+function canEditBlogPost(user, post) {
+    return user?.isAdmin;
+}
+
 export {
     AuthProvider,
     useAuth,
     AuthRoute,
+    canEditBlogPost,
 }

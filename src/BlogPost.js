@@ -18,15 +18,19 @@ function BlogPost() {
     const canEdit = !auth.user || canEditBlogPost(auth.user, blogpost);
 
     return (
-        <>
+        <div className="page-container">
             <h2>{blogpost.title}</h2>
-            <button onClick={returnToBlocg}>Back</button>
-            {canEdit && (
-                <button onClick={() => navigate(`/blog/${slug}/edit`)}>Edit</button>
-            )}
+            
+            <div className="actions">
+                <button type="button" onClick={returnToBlocg}>Back</button>
+                {canEdit && (
+                    <button onClick={() => navigate(`/blog/${slug}/edit`)}>Edit</button>
+                )}
+            </div>
+
             <p>{blogpost.content}</p>
-            <p>{blogpost.author}</p>
-        </>
+            <p style={{ color: 'var(--primary)' }}>By {blogpost.author}</p>
+        </div>
     );
 }
 

@@ -26,7 +26,7 @@ function BlogPostEdit() {
     };
 
     return (
-        <>
+        <div className="page-container">
             <h2>Edit post</h2>
             <form onSubmit={handleSubmit}>
                 <label>
@@ -46,12 +46,14 @@ function BlogPostEdit() {
                         rows={6}
                     />
                 </label>
-                <button type="submit">Save</button>
-                <button type="button" onClick={handleCancel}>
-                    Cancel
-                </button>
+                <div className="actions">
+                    <button type="button" className="secondary" onClick={handleCancel}>
+                        Cancel
+                    </button>
+                    <button type="submit">Save</button>
+                </div>
             </form>
-        </>
+        </div>
     );
 }
 

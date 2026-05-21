@@ -2,7 +2,10 @@ import React from "react";
 
 function HomePage() {
   return (
-    <h1>HomePage</h1>
+    <div className="page-container">
+      <h2>Home</h2>
+      <p>Welcome to our modern, premium React application.</p>
+    </div>
   );
 }
 

@@ -10,15 +10,14 @@ function LogoutPage() {
   };
 
   return (
-    <>
-      <h1>Logout</h1>
+    <div className="page-container">
+      <h2>Logout</h2>
 
       <form onSubmit={logout}>
-        <label>Are you sure you want to log out: </label>
-
-        <button type="submit">Logout</button>
+        <label>Are you sure you want to log out?</label>
+        <button type="submit" className="secondary" style={{ borderColor: 'var(--primary)', color: 'var(--primary)' }}>Yes, Logout</button>
       </form>
-    </>
+    </div>
   );
 }
 

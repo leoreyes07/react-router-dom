@@ -20,12 +20,7 @@ function Menu() {
 
                     return (
                         <li key={route.to}>
-                            <NavLink
-                                style={({ isActive }) => ({
-                                    color: isActive ? 'red' : 'blue',
-                                })}
-                                to={route.to}
-                            >
+                            <NavLink to={route.to}>
                                 {route.text}
                             </NavLink>
                         </li>

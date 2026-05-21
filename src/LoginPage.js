@@ -18,21 +18,22 @@ function LoginPage() {
   }
 
   return (
-    <>
-    <h1>Login</h1>
+    <div className="page-container">
+      <h2>Login</h2>
 
-    <form onSubmit={login}>
-      <label>Username:
+      <form onSubmit={login}>
+        <label>
+          Username:
+          <input 
+            value={username} 
+            onChange={e => setUsername(e.target.value)}
+            placeholder="Enter username (try 'admin' or 'leo')"
+          />
+        </label>
 
-      <input 
-        value={username} 
-        onChange={e => setUsername(e.target.value)}
-      />
-      </label>
-
-      <button type="submit">Login</button>
-    </form>
-    </>
+        <button type="submit">Login</button>
+      </form>
+    </div>
   );
 }
 

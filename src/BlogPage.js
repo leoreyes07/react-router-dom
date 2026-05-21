@@ -4,17 +4,17 @@ import { blogdata } from "./blogdata";
 
 function BlogPage() {
   return (
-    <>
-      <h1>BlogPage</h1>
+    <div className="page-container">
+      <h1>Blog</h1>
 
       <Outlet />
 
-      <ul>
+      <ul className="blog-list">
         {blogdata.map(post => (
           <BlogLink key={post.slug} post={post}/>
         ))}
       </ul>
-    </>
+    </div>
   );
 }
 
